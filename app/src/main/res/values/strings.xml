@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AJ_MusicApp</string>
+    <string name="rewind"><![CDATA[<<]]></string>
+    <string name="forward"><![CDATA[>>]]></string>
+    <string name="pause">||</string>
+    <string name="back">back<![CDATA[<]]></string>
+    <string name="play">play<![CDATA[>]]></string>
+</resources>
