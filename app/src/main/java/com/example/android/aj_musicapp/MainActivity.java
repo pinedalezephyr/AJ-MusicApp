@@ -1,145 +1,118 @@
 package com.example.android.aj_musicapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.concurrent.TimeUnit;
 
 
-public class MainActivity extends Activity {
-    private Button b1, b2, b3, b4;
-    private ImageView iv;
-    private MediaPlayer mediaPlayer;
+public class MainActivity extends AppCompatActivity {
 
-    private double startTime = 0;
-    private double finalTime = 0;
-
-    private Handler myHandler = new Handler();
-    ;
-    private int forwardTime = 5000;
-    private int backwardTime = 5000;
-    private SeekBar seekbar;
-    private TextView tx1, tx2, tx3;
-
-    public static int oneTimeOnly = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-        b1 = (Button) findViewById(R.id.button);
-        b2 = (Button) findViewById(R.id.button2);
-        b3 = (Button) findViewById(R.id.button3);
-        b4 = (Button) findViewById(R.id.button4);
-        iv = (ImageView) findViewById(R.id.imageView);
+        // Find the View that shows the numbers category
 
-        tx1 = (TextView) findViewById(R.id.textView2);
-        tx2 = (TextView) findViewById(R.id.textView3);
-        tx3 = (TextView) findViewById(R.id.textView4);
-        tx3.setText("Majesty.mp3");
+        Button playsongs = (Button) findViewById(R.id.playsongs);
 
-        mediaPlayer = MediaPlayer.create(this,R.raw.song);
-        seekbar = (SeekBar) findViewById(R.id.seekBar);
-        seekbar.setClickable(false);
-        b2.setEnabled(false);
+// Set a click listener on that View
+        if (playsongs != null) {
+            playsongs.setOnClickListener(new View.OnClickListener() {
 
-        b3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Playing sound",Toast.LENGTH_SHORT).show();
-                mediaPlayer.start();
+// The code in this method will be executed when the numbers View is clicked on.
 
-                finalTime = mediaPlayer.getDuration();
-                startTime = mediaPlayer.getCurrentPosition();
+                @Override
 
-                if (oneTimeOnly == 0) {
-                    seekbar.setMax((int) finalTime);
-                    oneTimeOnly = 1;
+                public void onClick(View view) {
+
+                    Intent playsongsIntent = new Intent(MainActivity.this,PlaySongs.class);
+
+                    startActivity(playsongsIntent);
+
                 }
 
-                tx2.setText(String.format("%d min, %d sec",
-                        TimeUnit.MILLISECONDS.toMinutes((long) finalTime),
-                        TimeUnit.MILLISECONDS.toSeconds((long) finalTime) -
-                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes((long)
-                                        finalTime)))
-                );
+            });
 
-                tx1.setText(String.format("%d min, %d sec",
-                        TimeUnit.MILLISECONDS.toMinutes((long) startTime),
-                        TimeUnit.MILLISECONDS.toSeconds((long) startTime) -
-                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes((long)
-                                        startTime)))
-                );
-
-                seekbar.setProgress((int) startTime);
-                myHandler.postDelayed(UpdateSongTime,100);
-                b2.setEnabled(true);
-                b3.setEnabled(false);
-            }
-        });
-
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Pausing sound",Toast.LENGTH_SHORT).show();
-                mediaPlayer.pause();
-                b2.setEnabled(false);
-                b3.setEnabled(true);
-            }
-        });
-
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int temp = (int) startTime;
-
-                if ((temp + forwardTime) <= finalTime) {
-                    startTime = startTime + forwardTime;
-                    mediaPlayer.seekTo((int) startTime);
-                    Toast.makeText(getApplicationContext(),"You have Jumped forward 5 seconds",Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(),"Cannot jump forward 5 seconds",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        b4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int temp = (int) startTime;
-
-                if ((temp - backwardTime) > 0) {
-                    startTime = startTime - backwardTime;
-                    mediaPlayer.seekTo((int) startTime);
-                    Toast.makeText(getApplicationContext(),"You have Jumped backward 5 Seconds",Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(),"Cannot jump backward 5 more Seconds",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
-
-    private Runnable UpdateSongTime = new Runnable() {
-        public void run() {
-            startTime = mediaPlayer.getCurrentPosition();
-            tx1.setText(String.format("%d min, %d sec",
-                    TimeUnit.MILLISECONDS.toMinutes((long) startTime),
-                    TimeUnit.MILLISECONDS.toSeconds((long) startTime) -
-                            TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.
-                                    toMinutes((long) startTime)))
-            );
-            seekbar.setProgress((int) startTime);
-            myHandler.postDelayed(this,100);
         }
-    };
+        // Find the View that shows the family category
+
+        Button search = (Button) findViewById(R.id.search);
+
+// Set a click listener on that View
+        if (search != null) {
+            search.setOnClickListener(new View.OnClickListener() {
+
+// The code in this method will be executed when the family View is clicked on.
+
+                @Override
+
+                public void onClick(View view) {
+
+                    Intent searchIntent = new Intent(MainActivity.this,Search.class);
+
+                    startActivity(searchIntent);
+
+                }
+
+            });
+
+        }
+        // Find the View that shows the colors category
+
+        Button library = (Button) findViewById(R.id.library);
+
+// Set a click listener on that View
+        if (library != null) {
+            library.setOnClickListener(new View.OnClickListener() {
+
+// The code in this method will be executed when the colors View is clicked on.
+
+                @Override
+
+                public void onClick(View view) {
+
+                    Intent libraryIntent = new Intent(MainActivity.this,Library.class);
+
+                    startActivity(libraryIntent);
+
+                }
+
+            });
+            // Find the View that shows the phrases category
+
+            Button online = (Button) findViewById(R.id.online);
+
+// Set a click listener on that View
+            if (online != null) {
+                online.setOnClickListener(new View.OnClickListener() {
+
+// The code in this method will be executed when the phrases View is clicked on.
+
+                    @Override
+
+                    public void onClick(View view) {
+
+                        Intent onlineIntent = new Intent(MainActivity.this,Online.class);
+
+                        startActivity(onlineIntent);
+
+                    }
+
+                });
+
+            }
+
+        }
+    }
 }
