@@ -5,30 +5,46 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Library extends AppCompatActivity {
+public class Library  {
 
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_library);
 
-            // Set the content of the activity to use the activity_library.xml layout file
-            setContentView(R.layout.activity_library);
 
-            // Find the View that shows the Returns to main screen category
 
-            Button button8 = (Button) findViewById(R.id.button8);
+            /** Song Title*/
+            private String mTitle;
 
-// Set a click listener on that View
-            if (button8 != null) {
-                button8.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        finish();
-                    }
-                });
+            /** Song Artist*/
+            private String mArtist;
+
+            /** length of sone*/
+            private String mTime;
+
+            /**
+             * Constructs a new {@link Library} object.
+             * @param Title is the name of song
+             * @param Artist is the artist singing song
+             * @param Time is the length of song
+             * */
+    public Library(String Title, String Artist, String Time){
+                mTitle = Title;
+                mArtist = Artist;
+                mTime = Time;
 
             }
+            /** returns the mag of quake
+             */
+            public String getmTitle () {return mTitle;}
+
+            /**
+             * returns loc of quake
+             */
+            public String getmArtist() { return mArtist; }
+
+            /** returns date of quake
+             */
+            public String getmTime() {return mTime;}
+
         }
-    }
+
+
