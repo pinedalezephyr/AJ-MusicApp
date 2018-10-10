@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
 
-    private LibaryAdapter mAdapter;
-
+    private LibraryAdapter mAdapter;
 
 
     @Override
@@ -34,133 +33,128 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        listView = (ListView) findViewById(R.id.song_list);
 
-        listView = (ListView) findViewById(R.id.songlist);
+        ArrayList<Library> songlist = new ArrayList<>();
 
-        ArrayList<Songs> songlistList = new ArrayList<>();
+        songlist.add(new Library("ZZ Top","Waitin for the bus","2:59"));
 
-        songlist.add(new Songs( "After Earth" , "2013"));
+        songlist.add(new Library("ZZ Top","Master of Sparks","3:33"));
 
-        moviesList.add(new Movie(R.drawable.movie_baby_driver, "Baby Driver" , "2017"));
+        songlist.add(new Library("ZZ Top","Beer Drinkers","3:23"));
 
-        moviesList.add(new Movie(R.drawable.movie_deadpool, "Deadpool" , "2016"));
+        songlist.add(new Library("ZZ Top","how, blue and righteous","3:14"));
 
-        moviesList.add(new Movie(R.drawable.movie_divergent, "Divergent" , "2014"));
+        songlist.add(new Library("ZZ Top","Have you heard","3:14"));
 
-        moviesList.add(new Movie(R.drawable.movie_fight, "Fight Club" , "1999"));
+        songlist.add(new Library("ZZ Top","Jesus just left Chicago","3:29"));
 
-        moviesList.add(new Movie(R.drawable.movie_jaws, "Jaws" , "1975"));
+        songlist.add(new Library("ZZ Top","Move me down the line","2:20"));
 
-        moviesList.add(new Movie(R.drawable.movie_pirates, "Pirates of the Caribbean" , "2011"));
+        songlist.add(new Library("ZZ Top","La Grange","3:51"));
 
-        moviesList.add(new Movie(R.drawable.movie_star, "Star Wars" , "2016"));
-
-        moviesList.add(new Movie(R.drawable.movie_the_grey, "The Grey" , "2011"));
-
+        songlist.add(new Library("ZZ Top","The Shiek","4:04"));
 
 
-        mAdapter = new LibraryAdapter(this,songlistList);
+        mAdapter = new LibraryAdapter(this,songlist);
 
         listView.setAdapter(mAdapter);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-        // Set the content of the activity to use the activity_main.xml layout file
-        setContentView(R.layout.activity_main);
+            // Set the content of the activity to use the activity_main.xml layout file
+            setContentView(R.layout.activity_main);
 
-        // Find the View that shows the numbers category
+            // Find the View that shows the numbers category
 
-        Button playsongs = (Button) findViewById(R.id.playsongs);
+            Button playsongs = (Button) findViewById(R.id.playsongs);
 
 // Set a click listener on that View
-        if (playsongs != null) {
-            playsongs.setOnClickListener(new View.OnClickListener() {
+            if (playsongs != null) {
+                playsongs.setOnClickListener(new View.OnClickListener() {
 
 // The code in this method will be executed when the numbers View is clicked on.
-
-                @Override
-
-                public void onClick(View view) {
-
-                    Intent playsongsIntent = new Intent(MainActivity.this,PlaySongs.class);
-
-                    startActivity(playsongsIntent);
-
-                }
-
-            });
-
-        }
-        // Find the View that shows the family category
-
-        Button search = (Button) findViewById(R.id.search);
-
-// Set a click listener on that View
-        if (search != null) {
-            search.setOnClickListener(new View.OnClickListener() {
-
-// The code in this method will be executed when the family View is clicked on.
-
-                @Override
-
-                public void onClick(View view) {
-
-                    Intent searchIntent = new Intent(MainActivity.this,Search.class);
-
-                    startActivity(searchIntent);
-
-                }
-
-            });
-
-        }
-        // Find the View that shows the colors category
-
-        Button library = (Button) findViewById(R.id.library);
-
-// Set a click listener on that View
-        if (library != null) {
-            library.setOnClickListener(new View.OnClickListener() {
-
-// The code in this method will be executed when the colors View is clicked on.
-
-                @Override
-
-                public void onClick(View view) {
-
-                    Intent libraryIntent = new Intent(MainActivity.this,Library.class);
-
-                    startActivity(libraryIntent);
-
-                }
-
-            });
-            // Find the View that shows the phrases category
-
-            Button online = (Button) findViewById(R.id.online);
-
-// Set a click listener on that View
-            if (online != null) {
-                online.setOnClickListener(new View.OnClickListener() {
-
-// The code in this method will be executed when the phrases View is clicked on.
 
                     @Override
 
                     public void onClick(View view) {
 
-                        Intent onlineIntent = new Intent(MainActivity.this,Online.class);
+                        Intent playsongsIntent = new Intent(MainActivity.this,PlaySongs.class);
 
-                        startActivity(onlineIntent);
+                        startActivity(playsongsIntent);
 
                     }
 
                 });
 
             }
+            // Find the View that shows the family category
 
+            Button search = (Button) findViewById(R.id.search);
+
+// Set a click listener on that View
+            if (search != null) {
+                search.setOnClickListener(new View.OnClickListener() {
+
+// The code in this method will be executed when the family View is clicked on.
+
+                    @Override
+
+                    public void onClick(View view) {
+
+                        Intent searchIntent = new Intent(MainActivity.this,Search.class);
+
+                        startActivity(searchIntent);
+
+                    }
+
+                });
+
+            }
+            // Find the View that shows the colors category
+
+            Button library = (Button) findViewById(R.id.library);
+
+// Set a click listener on that View
+            if (library != null) {
+                library.setOnClickListener(new View.OnClickListener() {
+
+// The code in this method will be executed when the colors View is clicked on.
+
+                    @Override
+
+                    public void onClick(View view) {
+
+                        Intent libraryIntent = new Intent(MainActivity.this,Library.class);
+
+                        startActivity(libraryIntent);
+
+                    }
+
+                });
+                // Find the View that shows the phrases category
+
+                Button online = (Button) findViewById(R.id.online);
+
+// Set a click listener on that View
+                if (online != null) {
+                    online.setOnClickListener(new View.OnClickListener() {
+
+// The code in this method will be executed when the phrases View is clicked on.
+
+                        @Override
+
+                        public void onClick(View view) {
+
+                            Intent onlineIntent = new Intent(MainActivity.this,Online.class);
+
+                            startActivity(onlineIntent);
+
+                        }
+
+                    });
+
+                }
+
+            }
         }
     }
-}

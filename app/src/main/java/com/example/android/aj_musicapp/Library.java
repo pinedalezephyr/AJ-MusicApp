@@ -27,24 +27,33 @@ public class Library  {
              * @param Time is the length of song
              * */
     public Library(String Title, String Artist, String Time){
-                mTitle = Title;
-                mArtist = Artist;
-                mTime = Time;
+               this.mTitle = Title;
+                this.mArtist = Artist;
+                this.mTime = Time;
 
             }
             /** returns the mag of quake
              */
             public String getmTitle () {return mTitle;}
 
-            /**
-             * returns loc of quake
+    public void setmTitle(String mTitle) {
+        this.mTitle = mTitle;
+    }
+
+    /**     * returns loc of quake
              */
             public String getmArtist() { return mArtist; }
+     public void setmArtist (String mArtist) {
+                this.mArtist = mArtist;
+            }
 
             /** returns date of quake
              */
             public String getmTime() {return mTime;}
 
-        }
+    public void setmTime(String mTime) {
+        this.mTime = mTime;
+    }
+}
 
 

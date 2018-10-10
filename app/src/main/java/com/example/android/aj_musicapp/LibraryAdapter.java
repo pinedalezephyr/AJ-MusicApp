@@ -40,7 +40,7 @@ public class LibraryAdapter extends ArrayAdapter<Library> {
      *
      */
         private Context mContext;
-        private List<songs> songsList = new ArrayList<>();
+        private ArrayList<LibraryAdapter> songsList = new ArrayList<>();
 
     public LibraryAdapter(@NonNull  Context context,List<Library> songs) {
         super(context,0,songs);
