@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".PlaySongs" />
         <activity android:name=".Search" />
-        <activity android:name=".Library" />
+        <activity android:name=".LibraryActivity" />
         <activity android:name=".Online"></activity>
     </application>
 

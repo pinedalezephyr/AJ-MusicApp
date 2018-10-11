@@ -19,52 +19,16 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView listView;
-
-    private LibraryAdapter mAdapter;
-
-
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-
-
-        listView = (ListView) findViewById(R.id.song_list);
-
-        ArrayList<Library> songlist = new ArrayList<>();
-
-        songlist.add(new Library("ZZ Top","Waitin for the bus","2:59"));
-
-        songlist.add(new Library("ZZ Top","Master of Sparks","3:33"));
-
-        songlist.add(new Library("ZZ Top","Beer Drinkers","3:23"));
-
-        songlist.add(new Library("ZZ Top","how, blue and righteous","3:14"));
-
-        songlist.add(new Library("ZZ Top","Have you heard","3:14"));
-
-        songlist.add(new Library("ZZ Top","Jesus just left Chicago","3:29"));
-
-        songlist.add(new Library("ZZ Top","Move me down the line","2:20"));
-
-        songlist.add(new Library("ZZ Top","La Grange","3:51"));
-
-        songlist.add(new Library("ZZ Top","The Shiek","4:04"));
-
-
-        mAdapter = new LibraryAdapter(this,songlist);
-
-        listView.setAdapter(mAdapter);
 
 
             // Set the content of the activity to use the activity_main.xml layout file
             setContentView(R.layout.activity_main);
 
-            // Find the View that shows the numbers category
+            // Find the button to play the song
 
             Button playsongs = (Button) findViewById(R.id.playsongs);
 
@@ -87,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 });
 
             }
-            // Find the View that shows the family category
+            // Find the button that opens the search page
 
             Button search = (Button) findViewById(R.id.search);
 
@@ -110,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 });
 
             }
-            // Find the View that shows the colors category
+            // Find the button that opens the Library page
 
             Button library = (Button) findViewById(R.id.library);
 
@@ -123,18 +87,15 @@ public class MainActivity extends AppCompatActivity {
                     @Override
 
                     public void onClick(View view) {
-
-                        Intent libraryIntent = new Intent(MainActivity.this,Library.class);
-
+                        Intent libraryIntent = new Intent(MainActivity.this,LibraryActivity.class);
                         startActivity(libraryIntent);
 
                     }
 
                 });
-                // Find the View that shows the phrases category
+                // Find the button that will open the online guide when hooked up
 
                 Button online = (Button) findViewById(R.id.online);
-
 // Set a click listener on that View
                 if (online != null) {
                     online.setOnClickListener(new View.OnClickListener() {
@@ -144,9 +105,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
 
                         public void onClick(View view) {
-
                             Intent onlineIntent = new Intent(MainActivity.this,Online.class);
-
                             startActivity(onlineIntent);
 
                         }

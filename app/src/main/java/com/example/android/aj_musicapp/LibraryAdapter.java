@@ -20,18 +20,13 @@ import java.util.List;
 
 /**
 
- * An {@link LibraryAdapter} knows how to create a list item layout for each earthquake
-
+ * An {@link LibraryAdapter} knows how to create a list item layout for each songs
  * in the data source (a list of {@link Library} objects).
-
  *
-
  * These list item layouts will be provided to an adapter view like ListView
-
  * to be displayed to the user.
-
  */
-public class LibraryAdapter extends ArrayAdapter<Library> {
+public class LibraryAdapter extends ArrayAdapter<Library>{
     /**
      * construct a new {@link LibraryAdapter}.
      *
@@ -40,10 +35,10 @@ public class LibraryAdapter extends ArrayAdapter<Library> {
      *
      */
         private Context mContext;
-        private ArrayList<LibraryAdapter> songsList = new ArrayList<>();
+        private ArrayList<Library> songsList = new ArrayList<>();
 
-    public LibraryAdapter(@NonNull  Context context,List<Library> songs) {
-        super(context,0,songs);
+      public LibraryAdapter(@NonNull  Context context,List<Library> songsList) {
+        super(context,0,songsList);
     }
 
     /**
@@ -58,13 +53,13 @@ public class LibraryAdapter extends ArrayAdapter<Library> {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.library_list_item,parent,false);
         }
         // Find song  at position in list
-        Library currentsong = getItem(position);
+        Library currentsong = songsList.get(position);
         // find Id Title
-        TextView TitleView = (TextView) listItemView.findViewById(R.id.title);
+        TextView TitleView = (TextView) listItemView.findViewById(R.id.Title);
         // display song title for list
         TitleView.setText(currentsong.getmTitle());
         //Find Id for Atrist
-        TextView ArtistView = (TextView) listItemView.findViewById(R.id.Artist);
+         TextView ArtistView = (TextView) listItemView.findViewById(R.id.Artist);
         // display Artist
         ArtistView.setText(currentsong.getmArtist());
         //fid text view of time

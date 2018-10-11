@@ -7,10 +7,6 @@ import android.widget.Button;
 
 public class Library  {
 
-
-
-
-
             /** Song Title*/
             private String mTitle;
 
@@ -26,28 +22,28 @@ public class Library  {
              * @param Artist is the artist singing song
              * @param Time is the length of song
              * */
-    public Library(String Title, String Artist, String Time){
+    public Library(String Artist, String Title, String Time){
                this.mTitle = Title;
                 this.mArtist = Artist;
                 this.mTime = Time;
 
             }
-            /** returns the mag of quake
+            /** returns the title of song
              */
-            public String getmTitle () {return mTitle;}
+            public String getmTitle() {return mTitle;}
 
     public void setmTitle(String mTitle) {
         this.mTitle = mTitle;
     }
 
-    /**     * returns loc of quake
+    /**     * returns the Artist of song
              */
             public String getmArtist() { return mArtist; }
      public void setmArtist (String mArtist) {
                 this.mArtist = mArtist;
             }
 
-            /** returns date of quake
+            /** returns run time of song
              */
             public String getmTime() {return mTime;}
 
