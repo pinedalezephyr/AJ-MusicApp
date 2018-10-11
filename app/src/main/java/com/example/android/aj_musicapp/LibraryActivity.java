@@ -16,7 +16,6 @@ public class LibraryActivity extends AppCompatActivity {
 
     private LibraryAdapter mAdapter;
 
-    private Context songList;
 
 
     @Override
@@ -27,46 +26,38 @@ public class LibraryActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_library);
 
-
         listView = (ListView) findViewById(R.id.song_list);
 
         ArrayList<Library> songlist = new ArrayList<>();
 
-        songlist.add(new Library("ZZ Top","Waitin for the bus","2:59"));
+        songlist.add(new Library("ZZ Top","Waitin for the bus","      2:59"));
 
-        songlist.add(new Library("ZZ Top","Master of Sparks","3:33"));
+        songlist.add(new Library("ZZ Top","Master of Sparks","      3:33"));
 
-        songlist.add(new Library("ZZ Top","Beer Drinkers","3:23"));
+        songlist.add(new Library("ZZ Top","Beer Drinkers","      3:23"));
 
-        songlist.add(new Library("ZZ Top","how, blue and righteous","3:14"));
+        songlist.add(new Library("ZZ Top","how, blue and righteous","      3:14"));
 
-        songlist.add(new Library("ZZ Top","Have you heard","3:14"));
+        songlist.add(new Library("ZZ Top","Have you heard","      3:14"));
 
-        songlist.add(new Library("ZZ Top","Jesus just left Chicago","3:29"));
+        songlist.add(new Library("ZZ Top","Jesus just left Chicago","      3:29"));
 
-        songlist.add(new Library("ZZ Top","Move me down the line","2:20"));
+        songlist.add(new Library("ZZ Top","Move me down","      2:20"));
 
-        songlist.add(new Library("ZZ Top","La Grange","3:51"));
+        songlist.add(new Library("ZZ Top","La Grange","      3:51"));
 
-        songlist.add(new Library("ZZ Top","The Shiek","4:04"));
+        songlist.add(new Library("ZZ Top","The Shiek","      4:04"));
 
 
         mAdapter = new LibraryAdapter(this,songlist);
 
         listView.setAdapter(mAdapter);
 
-
-
-
-
-            // Set the content of the activity to use the activity_online.xml layout file
-            setContentView(R.layout.activity_library);
-
-            // Find the View of button 8
+        // Find the View of button 8
 
             Button button8 = (Button) findViewById(R.id.button8);
 
-// Set a click listener on that View
+    // Set a click listener on that View
             if (button8 != null) {
                 button8.setOnClickListener(new View.OnClickListener() {
                     @Override

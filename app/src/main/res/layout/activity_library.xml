@@ -25,12 +25,15 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="77dp"
-        android:paddingBottom="100dp"
         android:src="@drawable/healingmusic" />
+
     <ListView
-        android:id ="@+id/song_list"
+        android:id="@+id/song_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/button8"
+        android:layout_marginBottom="-39dp">
+
     </ListView>
 
     <Button

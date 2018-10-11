@@ -3,18 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:padding="16dp">
-
+   android:orientation="horizontal"
+    android:background="#f4c20d">
 
     <TextView
-        android:id="@+id/Title"
+        android:id="@+id/Artist"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         tools:text="LOVE YOU"/>
     <TextView
-        android:id="@+id/Artist"
+        android:id="@+id/Title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ellipsize="end"

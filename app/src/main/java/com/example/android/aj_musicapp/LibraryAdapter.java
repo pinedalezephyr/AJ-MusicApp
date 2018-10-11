@@ -34,11 +34,11 @@ public class LibraryAdapter extends ArrayAdapter<Library>{
      * @param songs   is the list of songs in list
      *
      */
-        private Context mContext;
-        private ArrayList<Library> songsList = new ArrayList<>();
+      private List<Library> msongsList = new ArrayList<>();
 
       public LibraryAdapter(@NonNull  Context context,List<Library> songsList) {
         super(context,0,songsList);
+        this.msongsList = songsList;
     }
 
     /**
@@ -53,7 +53,7 @@ public class LibraryAdapter extends ArrayAdapter<Library>{
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.library_list_item,parent,false);
         }
         // Find song  at position in list
-        Library currentsong = songsList.get(position);
+        Library currentsong = msongsList.get(position);
         // find Id Title
         TextView TitleView = (TextView) listItemView.findViewById(R.id.Title);
         // display song title for list
@@ -64,7 +64,7 @@ public class LibraryAdapter extends ArrayAdapter<Library>{
         ArtistView.setText(currentsong.getmArtist());
         //fid text view of time
         TextView TimeView = (TextView) listItemView.findViewById(R.id.Time);
-        //display date for quake
+        //display play time of song
         TimeView.setText(currentsong.getmTime());
 
 

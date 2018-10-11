@@ -15,7 +15,7 @@ public class Search extends AppCompatActivity {
         // Set the content of the activity to use the activity_search.xml layout file
         setContentView(R.layout.activity_search);
 
-        // Find the View that shows the numbers category
+        // Find the View for button 7
 
         Button button6 = (Button) findViewById(R.id.button6);
 

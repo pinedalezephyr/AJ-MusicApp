@@ -15,7 +15,7 @@ public class  Online extends AppCompatActivity {
         // Set the content of the activity to use the activity_online.xml layout file
         setContentView(R.layout.activity_online);
 
-        // Find the View that shows the numbers category
+        // Find the View for button 7
 
         Button button7 = (Button) findViewById(R.id.button7);
 
