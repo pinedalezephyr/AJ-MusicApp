@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#9192AC">
 
     <TextView
         android:id="@+id/textview1"
@@ -15,17 +16,6 @@
         android:textColor="#A4C639"
         android:textSize="30sp" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="77dp"
-        android:paddingBottom="100dp"
-        android:src="@drawable/healingmusic" />
     <Button
         android:id="@+id/button6"
         android:layout_width="wrap_content"

@@ -43,7 +43,8 @@ public class PlaySongs extends AppCompatActivity {
             b3 = (Button) findViewById(R.id.button3);
             b4 = (Button) findViewById(R.id.button4);
             b5 = (Button) findViewById(R.id.button5);
-            iv = (ImageView) findViewById(R.id.imageView);
+
+
 
             tx1 = (TextView) findViewById(R.id.textView2);
             tx2 = (TextView) findViewById(R.id.textView3);
